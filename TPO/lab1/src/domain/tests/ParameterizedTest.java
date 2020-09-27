@@ -1,6 +1,5 @@
 package domain.tests;
 
-
 import domain.Hands;
 import domain.Scene;
 import org.junit.Test;
@@ -15,7 +14,8 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class ParameterizedTest {
     private int hands, alien_age, arthur_age;
-    public ParameterizedTest (int hands, int alien_age, int arthur_age) {
+
+    public ParameterizedTest(int hands, int alien_age, int arthur_age) {
         this.hands = hands;
         this.alien_age = alien_age;
         this.arthur_age = arthur_age;
@@ -23,8 +23,8 @@ public class ParameterizedTest {
 
     @Parameterized.Parameters
     public static Collection getParameters() {
-        return Arrays.asList(new Object[][] {
-                {10, 5, 5 },
+        return Arrays.asList(new Object[][]{
+                {10, 5, 5},
                 {10, 12, 12},
                 {10, 15, 20},
                 {10, 30, 30},
@@ -32,7 +32,7 @@ public class ParameterizedTest {
     }
 
     @Test
-    public void changeHairinessWithDifferentAgesTest(){
+    public void changeHairinessWithDifferentAgesTest() {
         Scene scene = new Scene(hands, alien_age, arthur_age);
 
         if (arthur_age <= 12)
